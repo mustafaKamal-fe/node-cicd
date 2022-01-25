@@ -1,0 +1,22 @@
+name: env variables
+
+on: [push]
+
+env:
+  WORKFLOW_SCOPE: Workflow scoped env
+
+jobs:
+  First-Job:
+    runs-on: ubuntu-latest
+    env:
+      JOB_SCOPED: Job scoped env
+
+    steps:
+      - name: 'Display available env variables'
+        run: |
+          echo "Curren Job is => $GITHUB_JOB"
+          echo "Repository is => $GITHUB_REPOSITORY"
+          echo "Repository is => $GITHUB_REPOSITORY_OWNER"
+          echo "This workflow file has $WORKFLOW_SCOPED, $JOB_SCOPED and $STEP_SCOPED"
+        env:
+          STEP_SCOPED: Step scoped env
