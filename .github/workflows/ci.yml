@@ -13,9 +13,10 @@ jobs:
 
     steps:
       - name: 'Display available env variables'
-        run: echo "Curren Job is => $GITHUB_JOB"
-        run: echo "Repository is => $GITHUB_REPOSITORY"
-        run: echo "Repository is => $GITHUB_REPOSITORY_OWNER"
-        run: echo "This workflow file has $WORKFLOW_SCOPED, $JOB_SCOPED and $STEP_SCOPED"
+        run: |
+          echo "Curren Job is => $GITHUB_JOB"
+          echo "Repository is => $GITHUB_REPOSITORY"
+          echo "Repository is => $GITHUB_REPOSITORY_OWNER"
+          echo "This workflow file has $WORKFLOW_SCOPED, $JOB_SCOPED and $STEP_SCOPED"
         env:
           STEP_SCOPED: Step scoped env
