@@ -17,6 +17,6 @@ jobs:
           echo "Curren Job is => $GITHUB_JOB"
           echo "Repository is => $GITHUB_REPOSITORY"
           echo "Repository is => $GITHUB_REPOSITORY_OWNER"
-          echo "This workflow file has $WORKFLOW_SCOPED, $JOB_SCOPED and $STEP_SCOPED"
+          echo "This workflow file has $WORKFLOW_SCOPED, $JOB_SCOPED and ${{env.STEP_SCOPED}}"
         env:
           STEP_SCOPED: Step scoped env
